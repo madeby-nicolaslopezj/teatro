@@ -6,7 +6,7 @@ Template.photosIndex.onRendered(function() {
   var self = this;
   self.autorun(function() {
     if (!self.subscriptionsReady()) return;
-    
+
     var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         // parse slide data (url, title, size ...) from DOM elements
@@ -21,13 +21,14 @@ Template.photosIndex.onRendered(function() {
                 item;
 
             for(var i = 0; i < numNodes; i++) {
-
                 figureEl = thumbElements[i]; // <figure> element
 
                 // include only element nodes
                 if(figureEl.nodeType !== 1) {
                     continue;
                 }
+
+                figureEl = figureEl.children[0];
 
                 linkEl = figureEl.children[0]; // <a> element
 
@@ -55,7 +56,6 @@ Template.photosIndex.onRendered(function() {
                 item.el = figureEl; // save link to element for getThumbBoundsFn
                 items.push(item);
             }
-
             return items;
         };
 
@@ -82,8 +82,8 @@ Template.photosIndex.onRendered(function() {
 
             // find index of clicked item by looping through all child nodes
             // alternatively, you may define index via data- attribute
-            var clickedGallery = clickedListItem.parentNode,
-                childNodes = clickedListItem.parentNode.childNodes,
+            var clickedGallery = clickedListItem.parentNode.parentNode,
+                childNodes = clickedListItem.parentNode.parentNode.childNodes,
                 numChildNodes = childNodes.length,
                 nodeIndex = 0,
                 index;
@@ -93,14 +93,12 @@ Template.photosIndex.onRendered(function() {
                     continue;
                 }
 
-                if(childNodes[i] === clickedListItem) {
+                if(childNodes[i] === clickedListItem.parentNode) {
                     index = nodeIndex;
                     break;
                 }
                 nodeIndex++;
             }
-
-
 
             if(index >= 0) {
                 // open PhotoSwipe if valid index found

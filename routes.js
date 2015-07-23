@@ -23,11 +23,7 @@ Router.route('/obras/:slug', {
   layoutTemplate: 'layout'
 });
 
-Router.route('/galeria', {
+Router.route('/fotos', {
   name: 'photos.index',
   layoutTemplate: 'layout'
-});
-
-Router.route('/galeria/:_id', {
-  name: 'photos.show'
 });
