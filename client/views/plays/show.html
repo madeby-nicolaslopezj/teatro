@@ -1,0 +1,18 @@
+<template name="playsShow">
+  <div class="container plays show">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {{# with play }}
+          <h1 class="page-title">{{ name }}</h1>
+          <p>
+            <img src="{{ image.url }}" alt="{{ name }}" />
+          </p>
+          <br>
+          <div class="content">
+            {{{ description }}}
+          </div>
+        {{/ with }}
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,22 @@
+<template name="playsIndex">
+  <div class="container plays index">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <h1 class="page-title">Obras</h1>
+        {{# each plays }}
+          <div class="play">
+            <h3><a href="{{ pathFor 'plays.show' }}">{{ name }}</a> <small>{{ releaseDate }}</small></h3>
+            <p>
+              <a href="{{ pathFor 'plays.show' }}">
+                <img src="{{ image.url }}" alt="{{ name }}" />
+              </a>
+            </p>
+            <p>
+              {{ breaklines shortDescription }}
+            </p>
+          </div>
+        {{/ each }}
+      </div>
+    </div>
+  </div>
+</template>

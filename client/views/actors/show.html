@@ -1,0 +1,17 @@
+<template name="actorsShow">
+  <div class="container">
+    {{# with actor }}
+      <h1 class="page-title">{{ name }}</h1>
+      <div class="row">
+        <div class="col-sm-5">
+          <img src="{{ image.url }}" alt="{{ name }}" />
+        </div>
+        <div class="col-sm-7">
+          <p>
+            {{ breaklines description }}
+          </p>
+        </div>
+      </div>
+    {{/ with }}
+  </div>
+</template>

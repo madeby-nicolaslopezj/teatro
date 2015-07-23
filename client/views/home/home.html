@@ -1,0 +1,58 @@
+<template name="home">
+  <div class="home">
+    <div class="gallery" style="background-image: url({{ dict 'home.backgroundImage.url' }})"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <h2>{{ dict 'global.name' }}</h2>
+          <p>
+            {{# with dict 'home.description' }}
+              {{ breaklines this }}
+            {{/ with }}
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <h2 class="text-right">En Cartelera</h2>
+        </div>
+      </div>
+
+      <br>
+
+      <h2>Compañía</h2><br>
+
+      <div class="row actors">
+        {{# each actors }}
+          <a href="{{ pathFor 'actors.show' }}">
+            <div class="col-sm-3 col-xs-6">
+              <img src="{{ image.url }}" alt="{{ name }}" />
+              <h3>{{ name }}</h3>
+            </div>
+          </a>
+        {{/ each }}
+      </div>
+
+      <br><br>
+
+      <h2>Noticias</h2>
+      <div class="row news">
+        {{# each news }}
+          <div class="col-sm-4 item">
+            <p class="publisher">
+              {{ publisher }}
+            </p>
+            <a href="#">
+              <h3 class="title">
+                {{ title }}
+              </h3>
+            </a>
+            <p class="description">
+              {{ description }}
+            </p>
+            <a class="link" href="{{ url }}" target="_blank">Ver</a>
+          </div>
+        {{/ each }}
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,31 @@
+<template name="header">
+  <div class="header">
+    <div class="container">
+      <ul class="links">
+        <li class="{{ isActiveRoute regex='history' }}">
+          <a href="{{ pathFor 'history' }}">
+            Historia
+          </a>
+        </li>
+        <li class="{{ isActiveRoute regex='plays' }}">
+          <a href="{{ pathFor 'plays.index' }}">
+            Obras
+          </a>
+        </li>
+        <li class="{{ isActiveRoute regex='photos' }}">
+          <a href="{{ pathFor 'photos.index' }}">
+            Galería
+          </a>
+        </li>
+      </ul>
+      <div class="logo">
+        <a href="{{ pathFor 'home' }}">
+          <img src="{{ dict 'global.logo.url' }}" alt="{{ dict 'global.name' }}" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="header-margin"></div>
+  </div>
+</template>
