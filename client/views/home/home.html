@@ -3,19 +3,31 @@
     <div class="gallery" style="background-image: url({{ dict 'home.backgroundImage.url' }})"></div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-sm-7">
-          <h2>{{ dict 'global.name' }}</h2>
-          <p>
-            {{# with dict 'home.description' }}
-              {{ breaklines this }}
-            {{/ with }}
-          </p>
+      <h2>{{ dict 'global.name' }}</h2><br>
+      <p>
+        {{# with dict 'home.description' }}
+          {{ breaklines this }}
+        {{/ with }}
+      </p>
+
+      <br>
+
+      <h2>En Cartelera</h2><br>
+
+      {{# each currentPlays }}
+        <div class="row">
+          <div class="col-sm-5">
+            <img src="{{ image.url }}" alt="{{ name }}" style="width: 100%;" />
+          </div>
+          <div class="col-sm-7">
+            <h3>{{ name }}</h3>
+            <div class="">
+              {{{ description }}}
+            </div>
+            <a href="{{ ticketsLink }}" target="_blank">Comprar Entradas</a>
+          </div>
         </div>
-        <div class="col-sm-5">
-          <h2 class="text-right">En Cartelera</h2>
-        </div>
-      </div>
+      {{/ each }}
 
       <br>
 

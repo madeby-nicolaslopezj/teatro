@@ -3,9 +3,21 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <h1 class="page-title">Obras</h1>
+        <br>
         <p>
-          Para comprar un texto de teatro aparte
+          {{ dict 'texts.buy' }}
         </p>
+        <br>
+        <ul>
+          {{# each plays }}
+            <li>
+              <a href="{{ pathFor 'plays.show' }}">
+                <h4>{{ name }}</h4>
+              </a>
+            </li>
+          {{/ each }}
+        </ul>
+
         {{# each plays }}
           <div class="play">
             <h3><a href="{{ pathFor 'plays.show' }}">{{ name }}</a> <small>{{ releaseDate }}</small></h3>
