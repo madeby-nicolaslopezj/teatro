@@ -7,7 +7,14 @@ Photos = new orion.collection('photos', {
   },
   tabular: {
     columns: [
-      orion.attributeColumn('image', 'image', 'Foto')
+      orion.attributeColumn('image', 'image', 'Foto'),
+      {
+        title: 'Editar',
+        data: '_id',
+        render: function(value) {
+          return 'Editar'
+        }
+      }
     ]
   }
 });

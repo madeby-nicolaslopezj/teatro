@@ -24,7 +24,8 @@ Plays.attachSchema(new SimpleSchema({
     regEx: /^[a-z0-9A-Z_-]+$/,
   },
   image: orion.attribute('image', {
-    label: 'Imagen'
+    label: 'Imagen',
+    optional: true
   }),
   releaseDate: {
     type: Number,
@@ -39,6 +40,10 @@ Plays.attachSchema(new SimpleSchema({
   },
   description: orion.attribute('froala', {
     label: 'Descripción'
+  }),
+  images: orion.attribute('images', {
+    label: 'Galería',
+    optional: true
   }),
   createdAt: orion.attribute('createdAt')
 }))

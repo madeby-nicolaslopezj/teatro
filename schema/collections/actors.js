@@ -25,11 +25,7 @@ Actors.attachSchema(new SimpleSchema({
   image: orion.attribute('image', {
     label: 'Imagen'
   }),
-  description: {
-    type: String,
-    autoform: {
-      type: 'textarea',
-      rows: 6
-    }
-  }
+  description: orion.attribute('froala', {
+    label: 'Descripción'
+  })
 }))
