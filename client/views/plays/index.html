@@ -21,11 +21,13 @@
         {{# each plays }}
           <div class="play">
             <h3><a href="{{ pathFor 'plays.show' }}">{{ name }}</a> <small>{{ releaseDate }}</small></h3>
+            {{# if image }}
             <p>
               <a href="{{ pathFor 'plays.show' }}">
                 <img src="{{ image.url }}" alt="{{ name }}" />
               </a>
             </p>
+            {{/ if }}
             <p>
               {{ breaklines shortDescription }}
             </p>

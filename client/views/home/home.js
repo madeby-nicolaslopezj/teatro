@@ -16,6 +16,6 @@ Template.home.helpers({
     return News.find({}, { sort: { createdAt: -1 }, limit: 3 });
   },
   currentPlays: function() {
-    return CurrentPlays.find({}, { sort: { createdAt: -1 } });
+    return CurrentPlays.find({}, { sort: { index: 1 } });
   }
 })

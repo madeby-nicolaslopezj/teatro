@@ -29,5 +29,8 @@ CurrentPlays.attachSchema(new SimpleSchema({
     label: 'Tickets Link',
     regEx: SimpleSchema.RegEx.Url
   },
+  index: {
+    type: Number
+  },
   createdAt: orion.attribute('createdAt')
 }))

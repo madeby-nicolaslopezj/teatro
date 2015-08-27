@@ -12,11 +12,12 @@
 
       <br>
 
-      <h2>En Cartelera</h2><br>
+      <h2>Actualmente En Cartelera</h2><br>
 
       {{# each currentPlays }}
         <div class="row">
           <div class="col-sm-5">
+            <br>
             <img src="{{ image.url }}" alt="{{ name }}" style="width: 100%;" />
           </div>
           <div class="col-sm-7">
@@ -37,7 +38,7 @@
         {{# each actors }}
           <a href="{{ pathFor 'actors.show' }}">
             <div class="col-sm-3 col-xs-6">
-              <img src="{{ image.url }}" alt="{{ name }}" />
+              <img src="{{ image.url }}" alt="{{ name }}" style="width: 100%;" />
               <h3>{{ name }}</h3>
             </div>
           </a>
